@@ -56,8 +56,9 @@ class CommWebActivity: AppCompatActivity() {
         webSettings.databaseEnabled = (true)//设置可使用数据库
         webSettings.javaScriptEnabled = (true)//支持js脚本
         webSettings.useWideViewPort = (true)//将图片调整到适合webview的大小
-        webSettings.setSupportZoom(false)//支持缩放
-        webSettings.builtInZoomControls = (false)//支持缩放
+        webSettings.setSupportZoom(true)//支持缩放
+        webSettings.builtInZoomControls = (true)//支持缩放
+        webSettings.displayZoomControls = false //是否显示缩放工具栏
         webSettings.layoutAlgorithm = (WebSettings.LayoutAlgorithm.NORMAL)//支持内容从新布局
         webSettings.setSupportMultipleWindows(false)//多窗口
         webSettings.cacheMode = (WebSettings.LOAD_CACHE_ELSE_NETWORK)//关闭webview中缓存

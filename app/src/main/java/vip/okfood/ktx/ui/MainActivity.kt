@@ -2,6 +2,7 @@ package vip.okfood.ktx.ui
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,6 +31,8 @@ class MainActivity: AppCompatActivity() {
         textTitle.text = "开发-".plus(getString(vip.okfood.ktx.R.string.app_name))
         mDataList.add(ItemData("Android基础(W3C)", "http://www.runoob.com/w3cnote/android-tutorial-intro.html"))
         mDataList.add(ItemData("Android知识收录(简书)", "https://www.jianshu.com/c/3fde3b545a35"))
+        mDataList.add(ItemData("Kolin基础(W3C)", "https://www.runoob.com/kotlin/kotlin-tutorial.html"))
+        mDataList.add(ItemData("Kolin语言中文站", "https://www.kotlincn.net/docs/reference/basic-syntax.html"))
 
         listUI.adapter = MyAdapter(this, android.R.layout.simple_list_item_1, mDataList)
         listUI.setOnItemClickListener { _, _, position, _ ->
@@ -49,6 +52,14 @@ class MainActivity: AppCompatActivity() {
             } else {
                 view = convertView
             }
+
+            val colorBg: Int = if (position%2 == 0) {
+                Color.parseColor("#88CCCCCC")
+            } else {
+                Color.parseColor("#55CCCCCC")
+            }
+
+            view.setBackgroundColor(colorBg)
             val text: TextView = view.findViewById(android.R.id.text1)
             val titleContent = getItem(position)!!.title
             text.paint.flags = Paint.UNDERLINE_TEXT_FLAG
