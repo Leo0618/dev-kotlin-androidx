@@ -65,7 +65,6 @@ class MainActivity: AppCompatActivity() {
             text.paint.flags = Paint.UNDERLINE_TEXT_FLAG
             text.paint.isAntiAlias = true
             text.text = titleContent
-            text.autoLinkMask
             return view
         }
     }
