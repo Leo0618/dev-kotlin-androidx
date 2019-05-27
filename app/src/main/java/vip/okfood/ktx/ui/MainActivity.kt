@@ -32,7 +32,6 @@ class MainActivity: AppCompatActivity() {
         mDataList.add(ItemData("Android知识收录(简书)", "https://www.jianshu.com/c/3fde3b545a35"))
 
         listUI.adapter = MyAdapter(this, android.R.layout.simple_list_item_1, mDataList)
-
         listUI.setOnItemClickListener { _, _, position, _ ->
             val itemData: ItemData = mDataList[position]
             val intent = Intent(this, CommWebActivity::class.java)

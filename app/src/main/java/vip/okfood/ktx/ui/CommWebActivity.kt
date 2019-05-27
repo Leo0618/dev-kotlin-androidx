@@ -74,12 +74,11 @@ class CommWebActivity: AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
         if (wv.canGoBack()) {
             wv.goBack()
-            return
+        } else {
+            super.onBackPressed()
         }
-        finish()
     }
 
 }
