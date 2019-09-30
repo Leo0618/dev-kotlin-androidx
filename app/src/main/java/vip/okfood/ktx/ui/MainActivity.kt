@@ -15,11 +15,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_titlebar.*
 
 
+
+
 /**
  * function:MainActivity
  *
  * <p></p>
- * Created by Leo on ${DATE}.
+ * Created by Leo on 2019/9/29.
  */
 class MainActivity: AppCompatActivity() {
     private var mDataList: ArrayList<ItemData> = ArrayList()
@@ -33,6 +35,7 @@ class MainActivity: AppCompatActivity() {
         mDataList.add(ItemData("Android知识收录(简书)", "https://www.jianshu.com/c/3fde3b545a35"))
         mDataList.add(ItemData("Kolin基础(W3C)", "https://www.runoob.com/kotlin/kotlin-tutorial.html"))
         mDataList.add(ItemData("Kolin语言中文站", "https://www.kotlincn.net/docs/reference/basic-syntax.html"))
+        mDataList.add(ItemData("掘金-android", "https://juejin.im/timeline/android"))
 
         listUI.adapter = MyAdapter(this, android.R.layout.simple_list_item_1, mDataList)
         listUI.setOnItemClickListener { _, _, position, _ ->

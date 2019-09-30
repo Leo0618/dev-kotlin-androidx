@@ -3,14 +3,15 @@ package vip.okfood.ktx
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import vip.okfood.ktx.net.RetrofitWrap
 
 /**
- * function:MyApp
+ * function:App
  *
  * <p></p>
  * Created by Leo on 2019/5/24.
  */
-class MyApp : Application() {
+class App : Application() {
 
     companion object {
         /**
@@ -18,7 +19,7 @@ class MyApp : Application() {
          *
          * @return the mContext
          */
-        var application: MyApp? = null
+        var application: App? = null
             private set
         /**
          * 获取主线程Handler
@@ -41,6 +42,7 @@ class MyApp : Application() {
         application = this
         mainThreadHandler = android.os.Handler(mainLooper)
         mainThreadId = android.os.Process.myTid()
+        RetrofitWrap.init("https://okfood.vip/", false)
     }
 
     override fun attachBaseContext(base: Context) {

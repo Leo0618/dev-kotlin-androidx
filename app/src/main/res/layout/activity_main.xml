@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:ignore="HardcodedText">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
 
     <include layout="@layout/layout_titlebar" />
+
+    <fragment
+        android:id="@+id/fragmentAuthorInfo"
+        class="vip.okfood.ktx.ui.AuthorInfoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
 
     <ListView
         android:id="@+id/listUI"
