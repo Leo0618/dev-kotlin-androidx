@@ -49,12 +49,7 @@ class MainActivity: AppCompatActivity() {
 
     class MyAdapter(context: Context, resource: Int, objects: ArrayList<ItemData>): ArrayAdapter<ItemData>(context, resource, objects) {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-            val view: View
-            if (convertView == null) {
-                view = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
-            } else {
-                view = convertView
-            }
+            val view: View = convertView ?: LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
 
             val colorBg: Int = if (position%2 == 0) {
                 Color.parseColor("#88CCCCCC")
